@@ -1,13 +1,11 @@
-/*Manipulação dos dados*/ 
-var banco = firebase.database().ref("filmes-43ac6-default-rtdb");
-banco.set ({ /*SET = cria ou substitui dados*/ 
-    1: { /*Identificador*/ 
-        nome : 'Inception', 
-        ano_lancamento: 2010
-    }
-    2: {
-        nome: 'Mulher Maravilha 2', 
-        ano_lancamento: 2020
-    }
-    
-})
+/*Arquivo de manipulação de dados no banco*/ 
+var database = firebase.database();
+
+function writeUserData() {
+    firebase.database().ref().set({
+      titulo: 'Mulher Maravilha', 
+      lancamento: '2017', 
+      diretor: 'Patty Jenkins', 
+      faturamento: '821,8 milhões'
+    });
+  }
