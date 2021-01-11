@@ -1,11 +1,75 @@
 /*Arquivo de manipulação de dados no banco*/ 
-var database = firebase.database();
+var firebaseConfig = {
+    apiKey: "AIzaSyCY7pWhi-6MOwj982RpBwwgMFDkw1-9go0",
+    authDomain: "moviego-3a8c7.firebaseapp.com",
+    projectId: "moviego-3a8c7",
+    storageBucket: "moviego-3a8c7.appspot.com",
+    messagingSenderId: "394871374465",
+    databaseURL: "https://moviego-3a8c7-default-rtdb.firebaseio.com",
+    appId: "1:394871374465:web:1dda6a609f11c0602ac380"
+  };
+ 
+  firebase.initializeApp(firebaseConfig);
 
-function writeUserData() {
-    firebase.database().ref().set({
-      titulo: 'Mulher Maravilha', 
-      lancamento: '2017', 
-      diretor: 'Patty Jenkins', 
-      faturamento: '821,8 milhões'
-    });
-  }
+  const dbRef = firebase.database().ref('moviego');
+
+/*===========================Exibe dados============================== */ 
+let lista = document.getElementById('lista'); 
+let dados = ''; 
+try{
+    let db = dbRef.on('child_added', function(snapshot){
+        let titulo = (snapshot.val().titulo_filme); 
+        let ano = (snapshot.val().ano_filme); 
+        let dir = (snapshot.val().diretor_filme); 
+        let fat = (snapshot.val().faturamento_filme); 
+     dados = '<tr><td>'+titulo+'</td><td>'+ano+'</td><td>'+dir+ '<td>'+fat+'</tr>'+dados; 
+        lista.innerHTML = dados; 
+     })
+}catch(error){
+    console.log('Não foi possível exibir lista de dados'+error); 
+}
+
+
+
+
+
+/*==========================Insert========================================*/
+
+
+document.getElementById('inserir').onclick = function(){
+    var titulo = document.getElementById('titulo').value; 
+    var ano = document.getElementById('ano').value; 
+    var diretor = document.getElementById('diretor').value; 
+    var faturamento = document.getElementById('faturamento').value; 
+    
+    try {
+        dbRef.push({
+                titulo_filme : titulo, 
+                ano_filme : ano, 
+                diretor_filme: diretor, 
+                faturamento_filme : faturamento  
+    }); 
+    let formulario = document.getElementById('formFilmes'); 
+    formulario.reset(); 
+    alert('Dados inseridos com sucesso'); 
+
+
+    }catch(error){
+        alert('Não foi possível inserir'+ error)
+    }
+    
+} 
+ //Editar: 
+
+document.getElementById("editar").onclick = function(){
+    
+    try{
+        let dados = 
+        alert ('Dado alterado'); 
+    }catch(error){
+        alert ('Não foi possível editar o dado' + error); 
+    }
+
+    
+}
+
