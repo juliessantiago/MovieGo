@@ -11,7 +11,7 @@
 
     <title>MovieGo - Login</title>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-
+    
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -53,10 +53,7 @@
                                                 id="senha" placeholder="Password">
                                         </div>
 
-                                        <div id="mensagem">
-
-                                        </div>
-                
+                                        
                                                             
                                     </form>
                                     <button class="btn btn-primary btn-user btn-block" id="botao_login">Login</button>
@@ -73,28 +70,12 @@
         </div>
 
     </div>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-          apiKey: "AIzaSyCY7pWhi-6MOwj982RpBwwgMFDkw1-9go0",
-          authDomain: "moviego-3a8c7.firebaseapp.com",
-          projectId: "moviego-3a8c7",
-          storageBucket: "moviego-3a8c7.appspot.com",
-          messagingSenderId: "394871374465",
-          databaseURL: "https://moviego.firebaseio.com",
+    <script src="js/script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
-          appId: "1:394871374465:web:1dda6a609f11c0602ac380"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-      </script>
-        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
-      
       <script src="js/auth.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>  
+ 
 </body>
 
 </html>

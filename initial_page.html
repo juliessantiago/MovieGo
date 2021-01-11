@@ -8,46 +8,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>MovieGo</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 </head>
 
-<body id="page-top">
-    <div class="container">
-        <h1 class="text-secondary">Lista de filmes</h1>
+<body id="pagina_logada" class="bg-light">
+    <div class="container w-50 p-3">
+        <h1 class="text-info">Lista de filmes</h1>
+        <table class="table table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Título do filme</th>
+              <th scope="col">Ano de lançamento</th>
+              <th scope="col">Diretor(a)</th>
+              <th scope="col">Faturamento</th>
+            </tr>
+          </thead>
+          <tbody id="lista">
+            
+          </tbody>
+          
+        </table>
     </div>
 
-    <div class="container">
-        <h1>Inserir novo filme</h1>
-        <form>
+    <div class="container w-50 p-3">
+        <h1 class="text-info">Inserir novo filme</h1>
+        <form id="formFilmes">
             <div class="form-group">
-              <label for="exampleInputEmail1">Endereço de email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-              <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                <label for="exampleInputText">Titulo</label>
+              <input type="text" class="form-control" id="titulo"  placeholder="Titulo do filme">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Senha</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                <label for="exampleInputText">Ano de lançamento</label>
+              <input type="text" class="form-control" id="ano"  placeholder="Ano de lançamento">
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+            <div class="form-group">
+                <label for="exampleInputText">Diretor(a)</label>
+              <input type="text" class="form-control" id="diretor"  placeholder="Diretor(a)">
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="form-group">
+                <label for="exampleInputText">Faturamento</label>
+              <input type="text" class="form-control" id="faturamento"  placeholder="Faturamento em dólares">
+            </div>
           </form>
+          <button type="" class="btn btn-primary" id="inserir">Adicionar</button>
+          <button type="" class="btn btn-primary" id="editar">Editar</button>
+          <button type="" class="btn btn-primary" id="excluir">Excluir</button>
+         
     </div>
+   
     
-    
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
