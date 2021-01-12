@@ -1,4 +1,4 @@
-
+//Configura login e logout do sistema 
 var botao_login = document.getElementById('botao_login'); 
 var email = document.getElementById('email'); 
 var senha = document.getElementById('senha');
@@ -17,3 +17,4 @@ botao_login.addEventListener('click', function(){
     alert ('Email ou senha incorretos'); 
   });
 }); 
+

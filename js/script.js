@@ -13,7 +13,18 @@ var firebaseConfig = {
 
   const dbRef = firebase.database().ref('moviego');
 
-/*===========================Exibe dados============================== */ 
+/*===========================Edita dados============================== */ 
+/*Funções de edição e exclusão de dados definidas antes de listar porque são chamadas 
+no onclick do innerHtml da função de exibição*/ 
+function editarDado(){
+    try{
+        alert ('Dado alterado'); 
+    }catch(error){
+        alert ('Não foi possível editar o dado' + error); 
+    }
+   
+}
+/*========================Lista Dados===================================*/ 
 let lista = document.getElementById('lista'); 
 let dados = ''; 
 try{
@@ -22,20 +33,15 @@ try{
         let ano = (snapshot.val().ano_filme); 
         let dir = (snapshot.val().diretor_filme); 
         let fat = (snapshot.val().faturamento_filme); 
-     dados = '<tr><td>'+titulo+'</td><td>'+ano+'</td><td>'+dir+ '<td>'+fat+'</tr>'+dados; 
+     dados = '<tr><td>'+titulo+'</td><td>'+ano+'</td><td>'+dir+ 
+     '<td>'+fat+'<td><button onclick="editarDado()" class="btn btn-secondary">Editar</button></td><td><button class="btn btn-secondary" id="excluir">Excluir</button></td></tr>'+dados; 
         lista.innerHTML = dados; 
      })
 }catch(error){
     console.log('Não foi possível exibir lista de dados'+error); 
 }
 
-
-
-
-
 /*==========================Insert========================================*/
-
-
 document.getElementById('inserir').onclick = function(){
     var titulo = document.getElementById('titulo').value; 
     var ano = document.getElementById('ano').value; 
@@ -61,15 +67,5 @@ document.getElementById('inserir').onclick = function(){
 } 
  //Editar: 
 
-document.getElementById("editar").onclick = function(){
-    
-    try{
-        let dados = 
-        alert ('Dado alterado'); 
-    }catch(error){
-        alert ('Não foi possível editar o dado' + error); 
-    }
 
-    
-}
 

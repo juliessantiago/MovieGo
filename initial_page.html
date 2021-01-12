@@ -15,7 +15,10 @@
 </head>
 
 <body id="pagina_logada">
-    <div class="container w-50 p-3">
+
+  <button class="btn btn-danger float-right m-4" id="botao_logout">Logout</button>
+  
+    <div class="container w-75 p-3">
         <h1 class="text-info">Lista de filmes</h1>
         <table class="table table-hover table-dark">
           <thead>
@@ -24,6 +27,8 @@
               <th scope="col">Ano de lançamento</th>
               <th scope="col">Diretor(a)</th>
               <th scope="col">Faturamento</th>
+              <th scope="col"><!--Editar--></th>
+              <th scope="col"><!--Excluir--></th>
             </tr>
           </thead>
           <tbody id="lista">
@@ -37,32 +42,31 @@
         <h1 class="text-info">Inserir novo filme</h1>
         <form id="formFilmes">
             <div class="form-group">
-                <label for="exampleInputText" class="h5 text-dark">Titulo</label>
+                <label for="exampleInputText" class="h5 text-light">Titulo</label>
               <input type="text" class="form-control" id="titulo">
             </div>
             <div class="form-group">
-                <label for="exampleInputText" class="h5 text-dark">Ano de lançamento</label>
+                <label for="exampleInputText" class="h5 text-light">Ano de lançamento</label>
               <input type="text" class="form-control" id="ano">
             </div>
             <div class="form-group">
-                <label for="exampleInputText" class="h5 text-dark">Diretor(a)</label>
+                <label for="exampleInputText" class="h5 text-light">Diretor(a)</label>
               <input type="text" class="form-control" id="diretor">
             </div>
             <div class="form-group">
-                <label for="exampleInputText" class="h5 text-dark">Faturamento</label>
+                <label for="exampleInputText" class="h5 text-light">Faturamento</label>
               <input type="text" class="form-control" id="faturamento">
             </div>
           </form>
           <button type="" class="btn btn-primary" id="inserir">Adicionar</button>
-          <button type="" class="btn btn-primary" id="editar">Editar</button>
-          <button type="" class="btn btn-primary" id="excluir">Excluir</button>
-         
     </div>
    
     
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 
     <script src="js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="js/logout.js"></script>
 </body>
 
 </html>
