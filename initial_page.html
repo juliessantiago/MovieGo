@@ -16,17 +16,19 @@
 
 <body id="pagina_logada">
 
+  
   <button class="btn btn-danger float-right m-4" id="botao_logout">Logout</button>
   
+  
     <div class="container w-75 p-3">
-        <h1 class="text-info">Lista de filmes</h1>
+        <h1 class="text-info">Todos os filmes</h1>
         <table class="table table-hover table-dark">
           <thead>
             <tr>
               <th scope="col">Título do filme</th>
-              <th scope="col">Ano de lançamento</th>
+              <th scope="col">Lançamento</th>
               <th scope="col">Diretor(a)</th>
-              <th scope="col">Faturamento</th>
+              <th scope="col">Faturamento (milhões)</th>
               <th scope="col"><!--Editar--></th>
               <th scope="col"><!--Excluir--></th>
             </tr>
@@ -38,7 +40,37 @@
         </table>
     </div>
 
-    <div class="container w-50 p-3">
+    
+
+    <div class="container w-75 p-3 bg-dark" id="formEdita" > 
+      <h1 class="text-success">Editar Filme</h1>
+      <form id="formFilmes">
+        <div class="form-group">
+          <label for="exampleInputText" class="h5 text-light">ID do filme</label>
+        <input type="text" class="form-control" id="idEdita">
+      </div>
+          <div class="form-group">
+              <label for="exampleInputText" class="h5 text-light">Titulo</label>
+            <input type="text" class="form-control" id="tituloEdita">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputText" class="h5 text-light">Ano de lançamento</label>
+            <input type="text" class="form-control" id="anoEdita">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputText" class="h5 text-light">Diretor(a)</label>
+            <input type="text" class="form-control" id="diretorEdita">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputText" class="h5 text-light">Faturamento</label>
+            <input type="text" class="form-control" id="faturamentoEdita">
+          </div>
+        </form>
+        <button type="" class="btn btn-success" onclick="editaDado()">Alterar Dados</button>
+  </div>
+
+
+    <div class="container w-75 p-3 bg-dark">
         <h1 class="text-info">Inserir novo filme</h1>
         <form id="formFilmes">
             <div class="form-group">
@@ -60,6 +92,32 @@
           </form>
           <button type="" class="btn btn-primary" id="inserir">Adicionar</button>
     </div>
+
+    <div class="container w-75 p-3">
+      <h1 class="text-info">Mais Recentes</h1>
+      <table class="table table-hover table-light">
+        <thead>
+          <tr>
+            <th scope="col">Título do filme</th>
+            <th scope="col">Lançamento</th>
+          </tr>
+        </thead>
+        <tbody id="listaRecentes">
+          
+        </tbody>
+        
+      </table>
+  </div>
+    
+  <div class="container w-75 p-3 mb-5">
+    <form>
+      <label>Buscar por nome</label>
+      <input type="text" class="form-control" id="inputBusca">
+          <table class="table table-hover table-dark">
+    </form>
+  </div>
+
+    
    
     
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
