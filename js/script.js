@@ -26,7 +26,7 @@ function exibeLista(){
                 let ano = snapshot.val().ano_filme; 
                 let dir = snapshot.val().diretor_filme; 
                 let fat = snapshot.val().faturamento_filme; 
-            dados = '<tr><td id ="altTitulo">'+titulo+'</td><td>'+ano+'</td><td>'+dir+ 
+            dados = '<tr class="text-light"><td id ="altTitulo">'+titulo+'</td><td>'+ano+'</td><td>'+dir+ 
             '<td>'+fat+'<td><button id="botaoEditar" onclick = "exibeFormEdita(\''+id+'\')" class="btn btn-secondary">Editar</button></td><td><button class="btn btn-secondary" onclick = "excluiDado(\''+id+'\')">Excluir</button></td></tr>'+dados; 
                 lista.innerHTML = dados; //Essa não é a forma mais correta de inserir o elemento button e passar o parâmetro pra função
             })
@@ -117,7 +117,7 @@ function exibeRecentes(){
     let dadosRecentes = ''; 
     try{
         dbRef.orderByChild("ano_filme").limitToFirst(5).on("child_added", function(snapshot){ 
-            dadosRecentes = '<tr><td>'+snapshot.val().titulo_filme+'</td><td>'+snapshot.val().ano_filme+'</td></tr>'+dadosRecentes; 
+            dadosRecentes = '<tr class="h5 text-light"><td>'+snapshot.val().titulo_filme+'</td><td>'+snapshot.val().ano_filme+'</td></tr>'+dadosRecentes; 
                 listaRecentes.innerHTML = dadosRecentes;
         })
     }catch(error){

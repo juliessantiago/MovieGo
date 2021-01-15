@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>MovieGo</title>
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
 
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 </head>
@@ -17,23 +17,25 @@
 <body id="pagina_logada">
 
   <div class="d-flex justify-content-around p-2 bd-highlight">
-    <h5 class="text-info p-3">Seja bem vindo, fulano</h5>
+    <h5 class="text-info p-3">Seja bem vindo, user</h5>
     <button class="btn btn-danger float-right m-4" id="botao_logout">Sair</button>
   </div>
   
-  
+  <div class="container w-75 mb-5">
+    <h2 class="text-light">MovieGO</h2>
+  </div>
   
     <div class="container w-75 p-3 mt-1">
-        <h3 class="text-info">Minha lista de filmes</h3>
-        <table class="table table-hover table-dark rounded">
+        <h4 class="text-light">Minha lista de filmes</h4>
+        <table class="table table-hover rounded">
           <thead>
             <tr>
-              <th scope="col">Título do filme</th>
-              <th scope="col">Lançamento</th>
-              <th scope="col">Diretor(a)</th>
-              <th scope="col">Gênero</th>
-              <th scope="col"><!--Editar--></th>
-              <th scope="col"><!--Excluir--></th>
+              <th scope="col" class="h5 text-light">Título do filme</th>
+              <th scope="col" class="h5 text-light">Lançamento</th>
+              <th scope="col" class="h5 text-light">Diretor(a)</th>
+              <th scope="col" class="h5 text-light">Gênero</th>
+              <th scope="col" ><!--Editar--></th>
+              <th scope="col" ><!--Excluir--></th>
             </tr>
           </thead>
           <tbody id="lista">
@@ -73,7 +75,7 @@
   </div>
 
 
-    <div class="container w-50 p-3 bg-dark mt-5 rounded">
+    <div class="container w-50 p-5 mt-5 rounded">
         <h3 class="text-info">Adicionar novo filme</h3>
         <form id="formFilmes">
             <div class="form-group">
@@ -96,13 +98,13 @@
           <button type="" class="btn btn-primary" id="inserir">Adicionar</button>
     </div>
 
-    <div class="container w-75 p-3">
+    <div class="container w-75 p-3 rounded">
       <h1 class="text-info">Mais Recentes</h1>
-      <table class="table table-hover table-light">
+      <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Título do filme</th>
-            <th scope="col">Lançamento</th>
+            <th scope="col" class="h5 text-light">Título do filme</th>
+            <th scope="col" class="h5 text-light">Lançamento</th>
           </tr>
         </thead>
         <tbody id="listaRecentes">

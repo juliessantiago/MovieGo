@@ -66,7 +66,8 @@ body {
   line-height: 1.5;
   color: #858796;
   text-align: left;
-  background-image: url('../img/fundo_cinema.jpg');
+  background: linear-gradient(180deg, rgba(139,0,139,1) 0%, rgba(180,34,180,1) 35%, rgba(203,28,203,1) 100%);
+  
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
